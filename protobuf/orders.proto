@@ -4,6 +4,7 @@ option go_package = "github.com/jacobschwantes/order-managemnt-grpc/common/order
 
 service OrderService {
     rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
+    rpc GetOrders(GetOrdersRequest) returns (GetOrdersResponse) {}
 }
 
 message CreateOrderRequest {
@@ -16,11 +17,11 @@ message CreateOrderResponse {
     string status = 1;
 }
 
-message GetOrderRequest {
+message GetOrdersRequest {
     int32 customerID = 1;
 }
 
-message GetOrderResponse {
+message GetOrdersResponse {
     repeated Order orders = 1;
 }
 
@@ -30,3 +31,4 @@ message Order {
     int32  ProductID = 3;
     int32 Quantity = 4;
 }
+
